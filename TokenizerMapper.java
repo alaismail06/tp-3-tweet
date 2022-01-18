@@ -4,6 +4,7 @@ package tn.isima.tp4;
 import org.apache.hadoop.mapreduce.Mapper;
  import java.io.IOException;
  import java.util.StringTokenizer;
+ import java.lang.*;
  public class TokenizerMapper
  extends Mapper<Object, Text, Text, IntWritable>{
  
@@ -16,7 +17,7 @@ import org.apache.hadoop.mapreduce.Mapper;
  }
  
  try {
- intValue = Double.parseDouble(string);
+ intValue = Integer.parseInt(string);
  return true;
  } catch (NumberFormatException e) {
  System.out.println("Input String cannot be parsed to Integer.");
@@ -32,14 +33,8 @@ s1=value.toString().toString().trim().replaceAll(",", "\t");
  System.out.println("s1="+s1);
  StringTokenizer itr = new StringTokenizer(s1);
  String author="";
- String content="";
- String date_time="";
- Double id=0.0;
- String language="";
- String latitude="";
- String longitude="";
- Integer number_of_likes=0;
- Integer number_of_hsares=0;
+ int number_of_likes=0;
+ int number_of_hsares=0;
  
  int i=0;
 while (itr.hasMoreTokens()) {
