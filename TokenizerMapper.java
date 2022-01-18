@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.Mapper;
  extends Mapper<Object, Text, Text, IntWritable>{
  
  public static boolean isNumeric(String string) {
- Double intValue;
+ int intValue;
  System.out.println(String.format("Parsing string: \"%s\"", string));
  if(string == null || string.equals("")) {
  System.out.println("String cannot be parsed, it is null or empty.");
