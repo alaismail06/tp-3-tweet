@@ -1,11 +1,11 @@
 package tn.isima.tp4;
- import org.apache.hadoop.io.DoubleWritable;
+ import org.apache.hadoop.io.IntWritable;
  import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
  import java.io.IOException;
  import java.util.StringTokenizer;
  public class TokenizerMapper
- extends Mapper<Object, Text, Text, DoubleWritable>{
+ extends Mapper<Object, Text, Text, IntWritable>{
  
  public static boolean isNumeric(String string) {
  Double intValue;
