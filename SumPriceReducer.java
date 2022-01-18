@@ -7,11 +7,11 @@ import java.lang.*;
 import java.io.IOException;
 
 public class SumPriceReducer
-        extends Reducer<Text,IntWritable,IntWritable,Text,IntWritable,IntWritable> {
+        extends Reducer<Text,IntWritable,Text,IntWritable> {
 
     private IntWritable result = new IntWritable();
 
-    public void reduce(Text key, Iterable<IntWritable> values, Iterable<IntWritable> values2, Context context) throws IOException, InterruptedException {
+    public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
         int sum = 0;
         for (IntWritable val : values) {
             System.out.println("value: "+val.get());

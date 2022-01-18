@@ -34,19 +34,19 @@ s1=value.toString().toString().trim().replaceAll(",", "\t");
  StringTokenizer itr = new StringTokenizer(s1);
  String author="";
  int number_of_likes=0;
- int number_of_hsares=0;
+ 
  
  int i=0;
 while (itr.hasMoreTokens()) {
  v=itr.nextToken();
     if(i==1) {author=v.toString();}
     if(i==8){number_of_likes=Integer.parseInt(v.toString());}
-    if(i==9){number_of_hsares=Integer.parseInt(v.toString());}
+   
  
- context.write(new Text(author), new IntWritable(number_of_likes), new IntWritable(number_of_hsares));
+ context.write(new Text(author), new IntWritable(number_of_likes));
  }
  
-System.out.println("author="+author+"number of likes"+number_of_likes+"number of shares"+number_of_hsares);
+System.out.println("author="+author+"number of likes"+number_of_likes);
  i++;
  
  
